@@ -1,6 +1,6 @@
 const express = require("express"),
        app = express(),
-       port = process.env.PORT || 3001,
+       port = process.env.PORT || 8080,
        cors = require("cors");
 const bodyParser = require('body-parser');
 const fs = require("fs");
@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 res.send({ message: "Connected to Backend server!" });
 });
 
-app.post("/add/item", addItem)
+app.post("/add/item", addItem);
 
 function addItem (request, response) {
 let id = request.body.jsonObject.id
